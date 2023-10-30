@@ -3,40 +3,42 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: black;
+    background: #0f0f0f;
 }
-
 .con{
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    -webkit-box-reflect: below 2px linear-gradient(transparent, black);
+    /* margin-bottom: 480px; */
+    -webkit-box-reflect:below 2px linear-gradient(transparent 10%,black);
 }
-
 .box{
-    height: 250px;
-    width: 250px;
-   border-radius: 5px;
-    background: white;
-    background: linear-gradient(45deg,  #A39FE1 10%, transparent 10%, transparent 50%,#A39FE1 50%,#A39FE1 60%,transparent 60%,transparent 100%),linear-gradient(135deg,  #56537a 10%, transparent 10%, transparent 50%,#504f67 50%,#4f4d70 60%,transparent 60%,transparent 100%);
+    width: 600px;
+    height: 200px;
+    background: linear-gradient(45deg , red 10%,transparent 10%,transparent 50%, red 50%,red 60%, transparent 60%,transparent 100%),linear-gradient(135deg , rgb(192, 65, 65) 10%,transparent 10%,transparent 50%, rgb(192, 65, 65) 50%,rgb(192, 65, 65)60%, transparent 60%,transparent 100%);
+    border-radius: 8px;
     background-size: 40px 40px;
-    filter: hue-rotate(calc(var(--i) * 129deg));
-    transform: rotate(calc(var(--i) * 90deg));
+    
     animation: animate 1s linear infinite;
 }
-@keyframes animate  {
- 0%{
-background-position: 40px;
- }  
- 100%{
-background-position: 0px;
- } 
+
+@keyframes animate {
+    0%{
+        background-position: 40px;
+        filter: hue-rotate(0deg);
+    }
+ 
+ 
+    100%{
+        filter: hue-rotate(360deg);
+        background-position: 0px;
+    }
 }
